@@ -1,28 +1,28 @@
-## The 2 functions permit to create a special object that store a matrix and
+## The 2 functions permit to create a special object that stores a matrix and
 ## its inverse.
 
-## The makeCacheMatrix() function returns a list of 4 fonctions.
-## and each of these functions return a matrix
+## The makeCacheMatrix() function returns a list of 4 fonctions
+## and each of these functions returns a matrix.
 
 makeCacheMatrix <- function(x = matrix()) {
         inv<-NULL
         
         ## 1. set() function permits to store 
-        ##   the matrix that one want to compute inverse
+        ##   the matrix that one want to compute inverse.
         set<-function(y){
                 x<<-y
                 inv<<-NULL
         }
         
-        ## 2. get() function returns the initial matrix
+        ## 2. get() function returns the initial matrix.
         get<-function(){x}
         
         ## 3. setInv() permits to sore the inverse in the Inv variable 
-        ## that is in the closure of makeCacheMatrix()
+        ## that is in the closure of makeCacheMatrix().
         setInv<-function(m){
                 inv<<-m
         }
-        ## 4. getInv() returns the inverse of the initial matrix x
+        ## 4. getInv() returns the inverse of the initial matrix x.
         getInv<-function() {inv}
         list(set=set,get=get,setInv=setInv,getInv=getInv)
 }
